@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.textMs {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ctr {
+  text-align: center
+}
+
+.sizeBox {
+  width: 40vw;
+  height: 30vw;
+}
+
+.btn {
+  width: 6vw;
+  height: 2vw;
+}
