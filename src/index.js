@@ -26,10 +26,12 @@ class Output extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            result: "Minified CSS Output"
+            result: "CSS Output"
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleClickCopy = this.handleClickCopy.bind(this);
+
     }
 
     generateResult() {
@@ -47,6 +49,18 @@ class Output extends React.Component {
 
     minify(str) {
         return str.slice(0).replace(/\s/g,"");
+
+        // handle commenting
+    }
+
+    handleClickCopy() {
+        let txt = this.state.result;
+        // implement copy to clipboard
+
+        alert("Copied!");
+    }
+
+    handleClickSaveFile() {
     }
 
     render() {
@@ -56,11 +70,10 @@ class Output extends React.Component {
                 <Input hc={this.handleChange} />
                 <iframe className="sizeBox" srcDoc={this.generateResult()}></iframe>
                 <br />
-                <button className="btn">Copy CSS</button>
-                <button className="btn">Save file</button>
+                <button className="btn tooltip tooltiptext" onClick={this.handleClickCopy}>Copy CSS</button>
+                <button className="btn" onClick={this.handleClickSaveFile}>Save file</button>
             </div>
         )}
 }
-
 
 ReactDOM.render(<Output />, document.getElementById('root'));
